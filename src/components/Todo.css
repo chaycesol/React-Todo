@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&family=Permanent+Marker&display=swap');
 html,
 body {
   width: 100%;
@@ -21,7 +21,7 @@ div,
 p,
 span {
   color: white;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Overpass', sans-serif;
 }
 
 .App {
@@ -60,8 +60,13 @@ h1 {
 .task.completed {
   background-color: #dbbac5;
   text-decoration: line-through;
-  /* font-size: 0.01rem; */
+  font-family: 'Permanent Marker', cursive;
 }
+
+.task.completed p {
+    font-family: 'Permanent Marker', cursive;
+  }
+
 form {
   width: 50%;
   display: flex;

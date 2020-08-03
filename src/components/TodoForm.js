@@ -6,7 +6,7 @@ class TodoForm extends React.Component {
     super(props);
     this.state = {
       itemText: "",
-      statePropThatReliesOnProps: props.something
+
     };
   }
 
@@ -39,7 +39,7 @@ class TodoForm extends React.Component {
           value={this.state.itemText}
           onChange={this.handleChanges}
         />
-        <button>Add</button>
+        <button>Add Task</button>
       </form>
     );
   }
