@@ -20,6 +20,11 @@ const tasks = [
   }
 ];
 
+window.localStorage.setItem('user', JSON.stringify(tasks));
+JSON.parse(window.localStorage.getItem('user'));
+
+
+
 //STRETCH - Local Storage
 
 // export const useInput = (key, initialValue) => {
@@ -46,7 +51,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      tasks
+      tasks: JSON.parse(localStorage.getItem("tasks")) || JSON.parse(localStorage.getItem("user")) || []
     };
   }
 
@@ -76,6 +81,7 @@ class App extends React.Component {
     this.setState({
       tasks: [...this.state.tasks, newItem]
     });
+    localStorage.setItem("tasks", JSON.stringify(this.state.tasks))
   };
 
  //Clears tasks that have been marked as completed 
@@ -85,7 +91,9 @@ clearCompleted = (evt) => {
   this.setState({
     tasks: this.state.tasks.filter((task) => !task.completed),
   });
+  localStorage.removeItem("tasks", JSON.stringify(this.state.tasks));
 };
+
 
   render() {
     return (
