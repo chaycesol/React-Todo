@@ -20,6 +20,27 @@ const tasks = [
   }
 ];
 
+//STRETCH - Local Storage
+
+// export const useInput = (key, initialValue) => {
+//   const [value, setValue] = useLocalStorage(key, initialValue);
+//   const handleChanges = updatedValue => {
+//     setValue(updatedValue);
+//   };
+//   return [value, setValue, handleChanges];
+// }; 
+
+// const useLocalStorage = (key, initialValue) => {
+//   const [storedValue, setStoredValue] = useState(() => {
+//     const item = window.localStorage.getItem(key);
+//     return item ? JSON.parse(item) : initialValue;
+//   });
+//   const setValue = value => {
+//     setStoredValue(value);
+//     window.localStorage.setItem(key, JSON.stringify(value));
+//   };
+//   return [storedValue, setValue];
+// };
 
 class App extends React.Component {
   constructor() {
@@ -60,6 +81,7 @@ class App extends React.Component {
  //Clears tasks that have been marked as completed 
 clearCompleted = (evt) => {
   evt.preventDefault();
+  alert('Congrats, you got sh!t done, my friend!')
   this.setState({
     tasks: this.state.tasks.filter((task) => !task.completed),
   });
